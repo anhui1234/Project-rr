@@ -1,0 +1,44 @@
+.shop{
+    height: 85vh;
+    background: linear-gradient(180deg,#FFFFFF,#444444);
+    display: flex;
+}
+.shop .shop-left{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding-left: 180px;
+    line-height: 1.1;
+}
+.shop .shop-left .shop-hand-icon{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.shop .shop-right{
+   flex: 1;
+   justify-content: center;
+   display: flex;
+   align-items: center;
+   margin-right: 150px;
+}
+.shop .shop-right .shop-right-iphone img{
+   width: 400px;
+   height: 300px;
+}
+.shop .shop-right .shop-right-macbook{
+    padding-top: 20px;
+}
+.shop .shop-right .shop-right-macbook img{
+   width: 200px;
+   height: 200px;
+}
+.shop .shop-right .shop-right-airpot{
+    margin-left: 100px;
+}
+.shop .shop-right .shop-right-airpot img{
+    width: 200px;
+    height: 200px;
+ }

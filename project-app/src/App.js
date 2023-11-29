@@ -5,7 +5,7 @@ import ShopCategory from "./Component/Pages/ShopCategory";
 import Product from "./Component/Pages/Product";
 import Cart from "./Component/Pages/Cart";
 import LoginSignup from "./Component/Pages/LoginSignup";
-
+import Shop from "./Component/Pages/Shop"
 function App() {
 
   return (
@@ -13,6 +13,7 @@ function App() {
       <BrowserRouter>
       <Navbar/>
       <Routes>
+        <Route path="/" element={<Shop/>}/>
         <Route path="/phone" element={<ShopCategory category="Phone"/>}/>
         <Route path="/laptop" element={<ShopCategory category="Latop"/>}/>
         <Route path="/tablet" element={<ShopCategory category="Tablet"/>}/>
