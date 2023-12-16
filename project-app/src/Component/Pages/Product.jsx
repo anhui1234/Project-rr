@@ -1,11 +1,9 @@
-
 function Product() {
     
     return (
-      <div>
-
+      <div className="Navbar">
+        
       </div>
     );
   }
-  
-  export default Product;
+export default Product;

@@ -1,27 +1,17 @@
+import { useState } from 'react';
 import './Navbar.css'
-import React, { Component, useState } from 'react';
-import logo from '../Assets/logo.png'
-import cart_icon from '../Assets/cart.png'
 import { Link } from 'react-router-dom';
 function Navbar() {
-    const [menu,setMenu]=useState("phone");
+  const [menu,setMenu]=useState("trangchu")
     return (
-      <div className='navbar'>
-        <div className="nav-logo">
-            <img src={logo} alt=''/>
-        </div>
-        <ul className='nav-menu'>
-            <li onClick={()=>{setMenu("Shop")}}><Link to="/" style={{textDecoration:'none'}}>Shop</Link>{menu==="Shop"?<hr/>:<></>}</li>
-            <li onClick={()=>{setMenu("Phone")}}><Link to="/phone" style={{textDecoration:'none'}}>Phone</Link>{menu==="Phone"?<hr/>:<></>}</li>
-            <li onClick={()=>{setMenu("Laptop")}}><Link to="/laptop" style={{textDecoration:'none'}}>Laptop</Link>{menu==="Laptop"?<hr/>:<></>}</li>
-            <li onClick={()=>{setMenu("Tablet")}}><Link to="/tablet" style={{textDecoration:'none'}}>Tablet</Link>{menu==="Tablet"?<hr/>:<></>}</li>
-            <li onClick={()=>{setMenu("Accessory")}}><Link to="/accessory" style={{textDecoration:'none'}}>Accessory</Link>{menu==="Accessory"?<hr/>:<></>}</li> 
-        </ul>
-        <div className="nav-login-cart">
-          <Link to="/loginSignup"><button>Login</button></Link>
-          <Link to="/cart"><img src={cart_icon} alt=''/></Link>
-          <div className="nav-cart-count">0</div>
-        </div>
+      <div className="Navbar">
+          <ul className='Navbar-menu'>
+            <li onClick={()=>{setMenu("trangchu")}}><Link style={{textDecoration:'none',color:'#E0FFFF'}} to='/'>Trang chủ</Link>{menu==="trangchu"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("maytinhbang")}}><Link style={{textDecoration:'none',color:'#E0FFFF'}} to='/maytinhbang'>Máy tính bảng</Link>{menu==="maytinhbang"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("laptop")}}><Link style={{textDecoration:'none',color:'#E0FFFF'}} to='/laptop'>Laptop</Link> {menu==="laptop"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("dienthoai")}}><Link style={{textDecoration:'none',color:'#E0FFFF'}} to='/dienthoai'>Điện thoại</Link>{menu==="dienthoai"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("phukien")}}><Link style={{textDecoration:'none',color:'#E0FFFF'}} to='/phukien'>Phụ kiện</Link> {menu==="phukien"?<hr/>:<></>}</li>
+          </ul>
       </div>
     );
   }

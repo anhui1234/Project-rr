@@ -1,11 +1,9 @@
-
 function LoginSignup() {
     
     return (
-      <div>
-
+      <div className="Navbar">
+        
       </div>
     );
   }
-  
-  export default LoginSignup;
+export default LoginSignup;

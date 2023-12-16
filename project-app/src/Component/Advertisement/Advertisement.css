@@ -1,0 +1,37 @@
+
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: #D80000;
+    color: #D0D0D0;
+    font-size: 16px;
+}
+.btn:hover{
+    opacity: 0.9;
+}
+.Advertisement{
+    width: 100%;
+    height: 400px;
+    background:  url('../Assets/poster.png')
+    no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-end;
+    padding-bottom: 300px;
+    margin-bottom: 20px;
+}
+.Advertisement h2, .Advertisement p{
+    margin-bottom: 10px;
+    color: #080808;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.Advertisement .btn{
+    margin-top: 20px;
+}

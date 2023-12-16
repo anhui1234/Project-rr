@@ -1,10 +1,12 @@
+
+
 function ShopCategory() {
     
-    return (
-      <div>
+      return (
+        <div className="Navbar">
+          
+        </div>
+      );
+    }
+export default ShopCategory;
 
-      </div>
-    );
-  }
-  
-  export default ShopCategory;

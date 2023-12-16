@@ -1,11 +1,9 @@
-
 function Cart() {
     
     return (
-      <div>
-
+      <div className="Navbar">
+        
       </div>
     );
   }
-  
-  export default Cart;
+export default Cart;
