@@ -6,7 +6,7 @@ function Advertisement() {
       <div className="Advertisement">
         <h2>Deal hời</h2>
         <p>Sản phẩm mới luôn được cập nhật</p>
-        <li className='btn'>Shop now<KeyboardDoubleArrowRightIcon style={{fontSize:'medium',top:'30px'}}/></li>
+        <li className='btn'>Shop now<KeyboardDoubleArrowRightIcon style={{fontSize:'medium'}}/></li>
       </div>
     );
   }

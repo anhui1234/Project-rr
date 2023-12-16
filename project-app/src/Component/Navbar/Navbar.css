@@ -17,13 +17,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-   
     cursor: pointer;
     padding: 10px 20px;
-   
+    color: #E0FFFF;
+}
+.Navbar-menu li:hover{
+    background-color: #F00000;
+}
+.gred{
+    background-color: #F00000;
 }
 
-.Navbar-menu hr{
-    width: 80%;
-    height: 1px;
-}
