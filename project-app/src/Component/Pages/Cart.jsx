@@ -1,8 +1,9 @@
+import CartItems from '../CartItem/CartItem'
 function Cart() {
     
     return (
-      <div className="Navbar">
-        
+      <div>
+        <CartItems/>
       </div>
     );
   }

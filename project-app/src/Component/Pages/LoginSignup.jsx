@@ -24,7 +24,7 @@ function LoginSignup() {
             
             <div className="input">
                 <LockIcon style={{margin:'0px 30px'}}/>
-                <input type="text" placeholder="Mật khẩu"/>
+                <input type="password" placeholder="Mật khẩu"/>
             </div>
           </div>
           {action==="Sign Up"?<div></div>:<div className="forgot-password">Quên mật khẩu?<span>Chọn vào đây</span></div>}
