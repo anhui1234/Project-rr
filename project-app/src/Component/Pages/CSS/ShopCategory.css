@@ -40,3 +40,70 @@
     background: black;
     color: aliceblue;
 }
+.shopcategory-products{
+    margin-top: 20px;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: (4,6fr);
+   
+}
+.shopcategory-products .product{
+    padding: 10px 20px;
+    overflow: hidden;
+    width: 200px;
+    height: 300px;
+    border: 1px solid #e2e0e0;
+    margin-bottom: 20px;
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+.shopcategory-products .product .box{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e0e0;
+}
+.shopcategory-products .product .box img{
+    width: 180px;
+    height: 200px;
+    margin-right: 50px;
+}
+.shopcategory-products .product .box .icon-product{
+    z-index: 1;
+    position: relative;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    transition: 0.5s;
+}
+.shopcategory-products .product .box:hover .icon-product{
+    transform: translateX(-50px);
+}
+.shopcategory-products .product .box .icon-product li{
+    list-style: none;
+    padding: 10px 10px;
+    color: #010f1c;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background: #fff;
+    transition: 0.5s;
+    font-size: 18px;
+}
+.shopcategory-products .product .box .icon-product li:hover{
+    background: #0989ff;
+    color: #fff;
+}
+.shopcategory-products .product .infor{
+    margin-top: 10px;
+}
+.shopcategory-products .product .infor h3{
+    font-size: 16px;
+    margin-top: 5px;
+    color: #010f1c;
+    transition: 0.5s;
+}
+.shopcategory-products .product .infor p{
+    color: #0989ff;
+}

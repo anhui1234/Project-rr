@@ -10,7 +10,7 @@ function ItemNb() {
       },[]);
       const fetchData=async ()=>{
         try{
-          const response=await fetch(`http://localhost:8080/product`);
+          const response=await fetch(`http://localhost:8080/product/nb`);
           
             if(response.ok){
               const productData=await response.json();
