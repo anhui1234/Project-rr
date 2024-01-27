@@ -31,4 +31,10 @@ public class ShopCategoryServiceImpl implements ShopCategoryService{
 		return scr.save(shopCategory);
 	}
 
+	@Override
+	public List<ShopCategory> getProductNb() {
+		// TODO Auto-generated method stub
+		return scr.getProductNb();
+	}
+
 }

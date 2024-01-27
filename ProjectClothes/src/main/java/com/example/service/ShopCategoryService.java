@@ -9,4 +9,5 @@ public interface ShopCategoryService {
 	List<ShopCategory>getAllShopCategorys();
 	ShopCategory getShopCategory(long id);
 	ShopCategory save(ShopCategory shopCategory);
+	List<ShopCategory>getProductNb();
 }

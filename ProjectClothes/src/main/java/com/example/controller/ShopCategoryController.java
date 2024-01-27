@@ -38,6 +38,11 @@ public class ShopCategoryController {
 		List<ShopCategory>lists=scs.getAllShopCategorys();
 		return ResponseEntity.ok(lists);
 	}
+	@GetMapping("/nb")
+	public ResponseEntity<List<ShopCategory>> getProductNb(){
+		List<ShopCategory>lists=scs.getProductNb();
+		return ResponseEntity.ok(lists);
+	}
 	@PostMapping
 	public ResponseEntity<ShopCategory> save(@RequestBody ShopCategory shopCategory) {
 		return new ResponseEntity<> (scs.save(shopCategory),HttpStatus.CREATED);

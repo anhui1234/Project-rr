@@ -14,6 +14,14 @@ create table Category(
     Categoryl nvarchar(30) not null,
     primary key(id_Category)
 );
+create table User(
+	id_User bigint auto_increment,
+    email nvarchar(50) not null,
+    username nvarchar(25) not null,
+    password nvarchar(255) not null,
+    role bit,
+    primary key(id_User)
+);
 insert into Category(id_Category,Categoryl) values(1,'Laptop');
 insert into Category(id_Category,Categoryl) values(2,'Máy tính bảng');
 insert into Category(id_Category,Categoryl) values(3,'Điện thoại');

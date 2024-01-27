@@ -31,11 +31,13 @@ public class ShopCategory {
 	private int price;
 	@Column(name="description")
 	private String description;
+	@Column(name="priority")
+	private boolean priority;
 	public ShopCategory() {
 		super();
 	}
-	public ShopCategory(long id_Shop_Category, String image, Category category, String shop_Name, int price,
-			String description) {
+	public ShopCategory(Long id_Shop_Category, String image, Category category, String shop_Name, int price,
+			String description, boolean priority) {
 		super();
 		this.id_Shop_Category = id_Shop_Category;
 		this.image = image;
@@ -43,11 +45,12 @@ public class ShopCategory {
 		this.shop_Name = shop_Name;
 		this.price = price;
 		this.description = description;
+		this.priority = priority;
 	}
-	public long getId_Shop_Category() {
+	public Long getId_Shop_Category() {
 		return id_Shop_Category;
 	}
-	public void setId_Shop_Category(long id_Shop_Category) {
+	public void setId_Shop_Category(Long id_Shop_Category) {
 		this.id_Shop_Category = id_Shop_Category;
 	}
 	public String getImage() {
@@ -80,6 +83,11 @@ public class ShopCategory {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
+	public boolean isPriority() {
+		return priority;
+	}
+	public void setPriority(boolean priority) {
+		this.priority = priority;
+	}
+
 }
