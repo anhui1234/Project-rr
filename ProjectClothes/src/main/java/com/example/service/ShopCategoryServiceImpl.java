@@ -37,4 +37,10 @@ public class ShopCategoryServiceImpl implements ShopCategoryService{
 		return scr.getProductNb();
 	}
 
+	@Override
+	public void deleteShopCategoryByUser(long id) {
+		// TODO Auto-generated method stub
+		 scr.deleteById(id);
+	}
+
 }

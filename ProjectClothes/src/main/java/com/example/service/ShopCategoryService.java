@@ -10,4 +10,6 @@ public interface ShopCategoryService {
 	ShopCategory getShopCategory(long id);
 	ShopCategory save(ShopCategory shopCategory);
 	List<ShopCategory>getProductNb();
+	void deleteShopCategoryByUser(long id);
+
 }
