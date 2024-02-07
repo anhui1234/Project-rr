@@ -15,6 +15,7 @@ import { useState } from 'react';
 import ProductDetail from './Component/ProductDetail/ProductDetail';
 function App() {
   // const  [category,setCategory]=useState();
+  
   return (
     <div >
       <BrowserRouter>
@@ -27,7 +28,7 @@ function App() {
           <Route  path="/dienthoai" element={<ShopCategory banner={phone_banner} category="3"/>}/>
           <Route  path="/phukien" element={<ShopCategory banner={accessory_banner} category="4"/>}/>
           <Route path="/product" element={<Product/>}>
-            <Route path=":productId" element={<ProductDetail/>}/>
+            <Route path=":productId" element={<Product/>}/>
           </Route>
           <Route path="/loginSignup" element={<LoginSignup/>}/>
           <Route path="/cart" element={<Cart/>}/>

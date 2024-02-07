@@ -1,0 +1,82 @@
+.productdisplay{
+    display: flex;
+    margin: 30px 100px;
+
+}
+.productdisplay .productdisplay-left{
+    display: flex;
+    gap: 17px;
+}
+.productdisplay .productdisplay-left .productdisplay-img-list{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.productdisplay .productdisplay-left .productdisplay-img-list img{
+    height: 120px;
+}
+.productdisplay .productdisplay-left .productdisplay-main-img{
+    width: 450px;
+    height: 530px;
+}
+.productdisplay .productdisplay-right{
+    margin: 0 70px;
+    display: flex;
+    flex-direction: column;
+}
+.productdisplay .productdisplay-right h2{
+    color: #505050;
+    font-size: 30px;
+    font-weight: 700;
+}
+.productdisplay .productdisplay-right .productdisplay-right-star{
+    display: flex;
+    align-items: center;
+    margin-top: 13px;
+    gap: 5px;
+}
+.productdisplay .productdisplay-right .productdisplay-right-price{
+    display: flex;
+    margin: 10px 0;
+    gap: 30px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #696969;
+}
+.productdisplay .productdisplay-right .productdisplay-right-color h2{
+    margin-top: 50px;
+    color: #505050;
+    font-size: 20px;
+    font-weight: 600;
+}
+.productdisplay .productdisplay-right .productdisplay-right-color .productdisplay-right-colors{
+    display: flex;
+    margin: 30px 0;
+    gap: 20px;
+}
+.productdisplay .productdisplay-right .productdisplay-right-color .productdisplay-right-colors div{
+    padding: 18px 24px;
+    background: #fbfbfbfb;
+    border: 1px solid #ebebebeb;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.productdisplay .productdisplay-right button{
+    padding: 20px 40px;
+    width: 300px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: #D80000;
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.productdisplay .productdisplay-right .productdisplay-right-category{
+    margin-top: 10px;
+
+}
+.productdisplay .productdisplay-right .productdisplay-right-category span{
+    font-weight: 600;
+}

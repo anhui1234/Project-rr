@@ -4,6 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import shoppingCart from '../Assets/cart.png'
 import { Link } from 'react-router-dom';
 function Header() {
+  
   return (
     <div className="header">
       <div className="header-logo">
@@ -15,6 +16,7 @@ function Header() {
           <button><SearchIcon/></button>
       </form>
       <div className="header-login-cart">
+        
         <Link to='/loginSignup'><button>Login</button></Link>
         <Link to='/cart'><img src={shoppingCart} alt=''/></Link>
         <div className="header-cart-count">0</div>

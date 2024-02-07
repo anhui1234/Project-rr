@@ -5,6 +5,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ShopCategory=(props)=>{
   const [products,setProduct]=useState([]);
@@ -46,7 +47,7 @@ const ShopCategory=(props)=>{
                   <img src={`http://localhost:8080/product/getimage/${product.image}`} alt={product.image}/>
                   <div className='icon-product'>
                       <li><FavoriteBorderIcon/></li>
-                      <li><VisibilityIcon/></li>
+                      <Link to={`/product/${product.id_Shop_Category}`}><li><VisibilityIcon/></li></Link>
                       <li><AddShoppingCartIcon/></li>
                   </div>
                 </div>
