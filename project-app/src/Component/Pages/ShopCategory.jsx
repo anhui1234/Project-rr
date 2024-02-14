@@ -6,7 +6,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { Delete } from '@mui/icons-material';
 const ShopCategory=(props)=>{
   const [products,setProduct]=useState([]);
   useEffect(()=>{
@@ -55,6 +55,7 @@ const ShopCategory=(props)=>{
                     <h3>{product.shop_Name}</h3>
                     <p>{product.price}</p>
                 </div>
+                <Delete/>
               </div>
               )
             }else{

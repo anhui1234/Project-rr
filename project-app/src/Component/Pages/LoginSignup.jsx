@@ -8,12 +8,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { useNavigate } from "react-router-dom";
 
-function LoginSignup() {
+const LoginSignup=({onLogin})=> {
     // const [action, setAction]=useState("Login");
     const navigate =useNavigate();
     const [username,setUsername]=useState('');
     const [password,setPassword]=useState('');
-    
+    // const [isLoggedIn, setLoggedIn] = useState(false);
+   
     const handleLogin = async () => {
       if(!username||!password){
         toast.error("Chưa nhập Username hoặc Password");
@@ -33,30 +34,38 @@ function LoginSignup() {
 
           if (response.ok) {
               
-              localStorage.setItem("token",data)
-              console.log("check",data)
+              localStorage.setItem("token",data);
+              console.log("check",data);
+              onLogin(username);
+              // setLoggedIn(true);
               // Lưu token vào localStorage hoặc Redux state
-              
-              
+            //  console.log(isLoggedIn);
               navigate("/");
           } else {
-              
-            toast.error("Đã xảy ra lỗi đăng nhập",data.error);
+           try {
+            const errorData = await response.json();
+            toast.error(`Đã xảy ra lỗi đăng nhập: ${errorData.error}`);
+           } catch (error) {
+            toast.error("Đã xảy ra lỗi đăng nhập, không thể đọc dữ liệu từ server");
+           }
            
           }
       } catch (error) {
           
-          toast.error("Đã xảy ra lỗi đăng nhập",error);
+        toast.error("Đã xảy ra lỗi kết nối hoặc lỗi server");
       }
       // alert("okok");
   };
   useEffect(()=>{
-    let token =localStorage.getItem("token")
+    const token =localStorage.getItem("token")
     if(token){
-      
+      // setLoggedIn(true);
+      // navigate("/")
+      // console.log(isLoggedIn);
+      // console.log(username);
     }
-  },[]);
-  
+  }, []);
+ 
     return (
       <div className="container">
         <div className="LoginSignup">
