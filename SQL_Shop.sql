@@ -14,13 +14,23 @@ create table Category(
     Categoryl nvarchar(30) not null,
     primary key(id_Category)
 );
-create table User(
+create table Users(
 	id_User bigint auto_increment,
     email nvarchar(50) not null,
     username nvarchar(25) not null,
     password nvarchar(255) not null,
     role bit,
     primary key(id_User)
+);
+create table orders(
+	order_id bigint auto_increment,
+	id_Shop_Category bigint,
+    id_User bigint,
+    quantity int,
+    order_date datetime,
+    primary key(order_id),
+ foreign key(id_Shop_Category) references Shop_Category(id_Shop_Category),
+     foreign key(id_User) references Users(id_User)
 );
 insert into Category(id_Category,Categoryl) values(1,'Laptop');
 insert into Category(id_Category,Categoryl) values(2,'Máy tính bảng');
