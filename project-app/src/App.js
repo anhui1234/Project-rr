@@ -11,6 +11,7 @@ import phone_banner from './Component/Assets/dienthoai.png';
 import laptop_banner from './Component/Assets/macbook.png';
 import tablet_banner from './Component/Assets/maytinhbang.png';
 import accessory_banner from './Component/Assets/phukien.png';
+import Signup from './Component/Pages/Signup'
 import { useEffect, useState } from 'react';
 import ProductDetail from './Component/ProductDetail/ProductDetail';
 const App=()=> {
@@ -40,7 +41,7 @@ const App=()=> {
             <Route path=":productId" element={<Product/>}/>
           </Route>
           <Route path="/loginSignup" element={<LoginSignup onLogin={handleLogin} />} />
-          
+          <Route path="/Signup" element={<Signup/>} />
           <Route path="/cart" element={<Cart/>}/>
         </Routes>
         <Footer/>

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginSignup=({onLogin})=> {
     // const [action, setAction]=useState("Login");
@@ -36,6 +36,7 @@ const LoginSignup=({onLogin})=> {
               
               localStorage.setItem("token",data);
               console.log("check",data);
+              toast.success("Đăng nhập thành công!");
               onLogin(username);
               // setLoggedIn(true);
               // Lưu token vào localStorage hoặc Redux state
@@ -88,7 +89,7 @@ const LoginSignup=({onLogin})=> {
                 <input type="password" placeholder="Mật khẩu" onChange={(e)=>setPassword(e.target.value)}/>
             </div>
           </div>
-          <div className="forgot-password">Quên mật khẩu?<span>Chọn vào đây</span></div>
+          <div className="forgot-password">Quên mật khẩu?<span>Chọn vào <Link to="/Signup">đây</Link></span></div>
           
           <div className="submit-container">
            
