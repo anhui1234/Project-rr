@@ -6,9 +6,30 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Delete } from '@mui/icons-material';
+// import { Delete } from '@mui/icons-material';
+import Delete from './Delete';
+import { ToastContainer, toast } from "react-toastify";
 const ShopCategory=(props)=>{
   const [products,setProduct]=useState([]);
+  // console.log(products);
+  
+  const handleDelete = async (productId) => {
+    try {
+      await fetch(`http://localhost:8080/product/delete/${productId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          // Các headers khác nếu cần
+        },
+      });
+
+      // Cập nhật danh sách sản phẩm sau khi xóa thành công
+      const updatedProducts = products.filter(product => product.id_Shop_Category !== productId);
+      setProduct(updatedProducts);
+    } catch (error) {
+      console.error('Error deleting product:', error);
+    }
+  };
   useEffect(()=>{
     fetchData();
   },[]);
@@ -18,6 +39,7 @@ const ShopCategory=(props)=>{
       if(response.ok){
         const productData=await response.json();
         setProduct(productData);
+       
       }else{
         console.error("fail to data")
       }
@@ -25,6 +47,7 @@ const ShopCategory=(props)=>{
       console.error('eror data',error);
     }
   }
+  
   return(
     <div className="shop-category">
       <img className="shopcategory-banner" src={props.banner} alt=""/>
@@ -55,7 +78,8 @@ const ShopCategory=(props)=>{
                     <h3>{product.shop_Name}</h3>
                     <p>{product.price}</p>
                 </div>
-                <Delete/>
+                <Delete productId={product.id_Shop_Category} onDelete={() => handleDelete(product.id_Shop_Category)}/>
+                <ToastContainer />
               </div>
               )
             }else{

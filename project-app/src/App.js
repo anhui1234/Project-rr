@@ -12,6 +12,7 @@ import laptop_banner from './Component/Assets/macbook.png';
 import tablet_banner from './Component/Assets/maytinhbang.png';
 import accessory_banner from './Component/Assets/phukien.png';
 import Signup from './Component/Pages/Signup'
+import Delete from './Component/Pages/Delete';
 import { useEffect, useState } from 'react';
 import ProductDetail from './Component/ProductDetail/ProductDetail';
 const App=()=> {
@@ -33,13 +34,14 @@ const App=()=> {
         <Navbar/>
         <Routes>
           <Route path="/" element={<Shop user={user}/>}/>
-          <Route  path="/maytinhbang" element={<ShopCategory banner={tablet_banner} category="2"/>}/>
+          <Route  path="/maytinhbang" element={<ShopCategory banner={tablet_banner} category="2" />}/>
           <Route   path="/laptop" element={<ShopCategory banner={laptop_banner} category="1"/>}/>
           <Route  path="/dienthoai" element={<ShopCategory banner={phone_banner} category="3"/>}/>
           <Route  path="/phukien" element={<ShopCategory banner={accessory_banner} category="4"/>}/>
           <Route path="/product" element={<Product/>}>
             <Route path=":productId" element={<Product/>}/>
           </Route>
+          {/* <Route path="/delete/:productId" element={<Delete/>}/> */}
           <Route path="/loginSignup" element={<LoginSignup onLogin={handleLogin} />} />
           <Route path="/Signup" element={<Signup/>} />
           <Route path="/cart" element={<Cart/>}/>
