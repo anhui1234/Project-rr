@@ -12,8 +12,14 @@ import { ToastContainer, toast } from "react-toastify";
 const ShopCategory=(props)=>{
   const [products,setProduct]=useState([]);
   // console.log(products);
-  
+  // console.log('isLoggedIn in ShopCategory:', props.isLoggedIn);
+  // console.log('tên đúng là:',props.user)
   const handleDelete = async (productId) => {
+    if (!props.isLoggedIn) {
+      // Hiển thị thông báo hoặc thực hiện hành động phù hợp khi chưa đăng nhập
+      toast.error("Bạn không có quyền Admin");
+      return;
+    }
     try {
       await fetch(`http://localhost:8080/product/delete/${productId}`, {
         method: 'DELETE',
@@ -78,7 +84,10 @@ const ShopCategory=(props)=>{
                     <h3>{product.shop_Name}</h3>
                     <p>{product.price}</p>
                 </div>
+                {props.isLoggedIn && props.user==="anhui" &&(
+
                 <Delete productId={product.id_Shop_Category} onDelete={() => handleDelete(product.id_Shop_Category)}/>
+                )}
                 <ToastContainer />
               </div>
               )

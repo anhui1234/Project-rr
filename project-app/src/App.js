@@ -15,6 +15,7 @@ import Signup from './Component/Pages/Signup'
 import Delete from './Component/Pages/Delete';
 import { useEffect, useState } from 'react';
 import ProductDetail from './Component/ProductDetail/ProductDetail';
+
 const App=()=> {
   // const  [category,setCategory]=useState();
   const [isLoggedIn, setLoggedInUser] = useState(false);
@@ -25,8 +26,12 @@ const App=()=> {
     // Xử lý thông tin đăng nhập và cập nhật loggedInUser
     setLoggedInUser(true);
     setUser(user);
+    // Lưu thông tin đăng nhập vào Local Storage
+  localStorage.setItem('isLoggedIn', true);
+  localStorage.setItem('user', JSON.stringify(user));
+  
   };
-
+  // console.log("user quyền gì",user);
   return (
     <div >
       <BrowserRouter>
@@ -34,10 +39,10 @@ const App=()=> {
         <Navbar/>
         <Routes>
           <Route path="/" element={<Shop user={user}/>}/>
-          <Route  path="/maytinhbang" element={<ShopCategory banner={tablet_banner} category="2" />}/>
-          <Route   path="/laptop" element={<ShopCategory banner={laptop_banner} category="1"/>}/>
-          <Route  path="/dienthoai" element={<ShopCategory banner={phone_banner} category="3"/>}/>
-          <Route  path="/phukien" element={<ShopCategory banner={accessory_banner} category="4"/>}/>
+          <Route  path="/maytinhbang" element={<ShopCategory banner={tablet_banner} category="2" isLoggedIn={isLoggedIn} user={user}/>}/>
+          <Route   path="/laptop" element={<ShopCategory banner={laptop_banner} category="1" isLoggedIn={isLoggedIn} user={user}/>}/>
+          <Route  path="/dienthoai" element={<ShopCategory banner={phone_banner} category="3" isLoggedIn={isLoggedIn} user={user}/>}/>
+          <Route  path="/phukien"  element={<ShopCategory banner={accessory_banner} category="4" isLoggedIn={isLoggedIn} user={user}/>} />
           <Route path="/product" element={<Product/>}>
             <Route path=":productId" element={<Product/>}/>
           </Route>

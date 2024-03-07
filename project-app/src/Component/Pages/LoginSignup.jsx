@@ -5,7 +5,7 @@
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-
+import {jwtDecode} from 'jwt-decode';
 import { Link, useNavigate } from "react-router-dom";
 
 const LoginSignup=({onLogin})=> {
@@ -13,6 +13,7 @@ const LoginSignup=({onLogin})=> {
     const navigate =useNavigate();
     const [username,setUsername]=useState('');
     const [password,setPassword]=useState('');
+   
     // const [isLoggedIn, setLoggedIn] = useState(false);
    
     const handleLogin = async () => {
@@ -31,16 +32,20 @@ const LoginSignup=({onLogin})=> {
           });
 
           const data = await response.json();
-
+          // const decodedToken = jwtDecode(data.token);
+          // const role=decodedToken.role;
           if (response.ok) {
               
               localStorage.setItem("token",data);
+              // localStorage.setItem("role", role);
               console.log("check",data);
+              // console.log("role",role);
               toast.success("Đăng nhập thành công!");
               onLogin(username);
               // setLoggedIn(true);
               // Lưu token vào localStorage hoặc Redux state
             //  console.log(isLoggedIn);
+           
               navigate("/");
           } else {
            try {
@@ -89,7 +94,7 @@ const LoginSignup=({onLogin})=> {
                 <input type="password" placeholder="Mật khẩu" onChange={(e)=>setPassword(e.target.value)}/>
             </div>
           </div>
-          <div className="forgot-password">Quên mật khẩu?<span>Chọn vào <Link to="/Signup">đây</Link></span></div>
+          <div className="forgot-password">Chưa có tài khoản?<span>Chọn vào <Link to="/Signup">đây</Link></span></div>
           
           <div className="submit-container">
            

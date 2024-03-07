@@ -1,7 +1,7 @@
 
 import { Delete } from '@mui/icons-material';
 import { Navigate, useNavigate } from 'react-router-dom';
-const DeleteButton = ({ productId}) => {
+const DeleteButton = ({productId}) => {
     const navigate = useNavigate();
     const handleDelete = async () => {
         try {
@@ -23,7 +23,11 @@ const DeleteButton = ({ productId}) => {
     };
   
     return (
-      <Delete onClick={handleDelete}/>
+      <div>
+        
+          <Delete onClick={handleDelete}/>
+       
+      </div>
     );
   };
   
